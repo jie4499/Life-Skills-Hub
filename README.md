@@ -1,58 +1,118 @@
 # Qoder Skills Collection
 
-A curated collection of skills for [Qoder](https://github.com/your-org/qoder) - AI-powered coding assistant.
+一个为 [Qoder](https://github.com/your-org/qoder) AI 编程助手精心策划的技能集合，让 AI 在生活中发挥更大作用！
 
-## Available Skills
+## 可用技能列表
 
-| Skill | Description | Language |
-|-------|-------------|----------|
-| [yu-qian-style](skills/yu-qian-style.md) | 于谦风格模拟器，学习于谦的说话风格和艺术特色 | 中文 |
+| 技能名称 | 描述 | 语言 |
+|---------|------|------|
+| [yu-qian-style](skills/yu-qian-style.md) | 于谦风格模拟器，学习于谦的说话风格和艺术特色，让对话更生动有趣 | 中文 |
+| [gold-price-monitor](.qoder/skills/gold-price-monitor) | 黄金价格实时监控与新闻分析，支持价格曲率计算、趋势预警和投资建议 | 中文 |
 
-## Quick Start
+## 快速开始
 
-1. Copy the skill files from the `skills/` directory to your project's `.qoder/skills/` folder
-2. Start using the skills in your conversations
+1. 从 `skills/` 目录复制技能文件到你项目的 `.qoder/skills/` 文件夹
+2. 在对话中开始使用这些技能
 
-## Usage Example
+## 使用示例
 
+### 于谦风格模拟器
 ```
 使用 yu-qian-style 风格回复以下内容：...
 ```
 
-## Contributing
+**适用场景：**
+- 生成幽默的家庭群名、微信名
+- 撰写有趣的朋友圈文案
+- 让与大模型的对话更生动愉快
+- 润色枯燥的任务描述
 
-We welcome contributions! To add a new skill:
+### 黄金价格监控
+```bash
+python scripts/gold_monitor.py --interval 60 --threshold 2.0
+```
 
-1. Create a new `.md` file in the `skills/` directory
-2. Follow the skill template format (see existing skills for reference)
-3. Update the README.md to include your skill in the table
-4. Submit a pull request
+**功能特性：**
+- 实时获取黄金价格（招商银行 API）
+- 计算价格波动曲率，识别异常波动
+- 配合定时任务自动提醒
+- 结合新闻分析生成投资建议
 
-## Skill Template
+## 技能详情
+
+### 1. 于谦风格模拟器 (yu-qian-style)
+
+嚯！您猜怎么着？这技能可有意思了！
+
+通过分析于谦的经典相声、访谈和节目表现，学习其独特的说话风格——北京腔调、捧哏艺术、三大爱好梗（抽烟、喝酒、烫头），让您的内容有那股子京味儿，听着就亲切！
+
+**核心功能：**
+- 任务描述润色（把枯燥变生动）
+- 会议发言稿生成
+- 团队激励话语
+- 日常对话模拟
+- 内容创作辅助
+
+### 2. 黄金价格监控 (gold-price-monitor)
+
+上班哪能盯着金价看？错过 915 追悔莫及？
+
+这个技能帮您实时监控黄金价格波动，计算价格曲率，及时发现异动，辅助您做出正确决策。
+
+**核心功能：**
+- 通过招商银行 API 获取实时金价
+- 计算价格上涨/下跌曲率（二阶导数近似）
+- 基于滑动窗口识别异常波动
+- 结合华尔街见闻新闻分析
+- 生成投资建议
+
+**使用方法：**
+```bash
+# 默认配置（每分钟查询一次，曲率阈值 2.0）
+python scripts/gold_monitor.py
+
+# 自定义配置（每 30 秒查询，阈值 1.5）
+python scripts/gold_monitor.py --interval 30 --threshold 1.5 --window 30
+```
+
+## 贡献指南
+
+欢迎贡献！添加新技能的步骤：
+
+1. 在 `skills/` 目录下创建新的 `.md` 文件
+2. 遵循技能模板格式（参考现有技能）
+3. 更新 README.md 将您的技能加入表格
+4. 提交 Pull Request
+
+## 技能模板
 
 ```markdown
 ---
 name: your-skill-name
-description: Brief description of what this skill does
+description: 技能的简要描述
 ---
 
-## Overview
+## 概述
 
-Detailed description of the skill...
+技能的详细描述...
 
-## Usage
+## 使用方法
 
-### Example 1
+### 示例 1
 ...
 
-### Example 2
+### 示例 2
 ...
 ```
 
-## License
+## 许可证
 
-MIT License - feel free to use these skills in your projects!
+MIT License - 欢迎自由使用这些技能！
 
-## Credits
+## 致谢
 
-Created by the community, for the community.
+由社区创建，服务于社区。
+
+---
+
+**项目初衷：** AI 的作用不只是替代程序员，更应该在生活中有更广泛的适用范围。从于谦语言包到黄金价格监控，我们希望让 AI 成为生活中的得力助手！这不就结了嘛！😄
